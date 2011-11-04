@@ -1,4 +1,4 @@
-John Moeller, Amirali Abdullah, Alex Clemmer
+*Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
 # TODO List
 *(Week of November 5)*
