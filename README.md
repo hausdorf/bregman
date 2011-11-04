@@ -1,6 +1,12 @@
 John Moeller, Amirali Abdullah, Alex Clemmer
 
 # TODO List
-1. Find/generate new data sets
+*(Week of November 5)*
+
+1. Find/generate new data set:
+   * High dimensional
+   * Random??
 2. Decide IO format for dataset
-3. Decide trivial heuristic, code it up this wee (*i.e.*, start with a point, extend it)
+   * Permutable
+3. Decide trivial heuristic, code it up this week
+   * (*e.g.*, start with a point, extend it)
