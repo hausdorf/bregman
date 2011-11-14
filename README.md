@@ -23,4 +23,4 @@
      - [John] Guess who forgot to do this?
 
 4. Find out how to use the package
-   * [Alex] Given a ball a right-ball in a convex measure, determine how to feed this to the package.
+   * [Alex] Given a ball a right-ball in a convex measure, *e.g.*, { x | D(x, c) \le r }, determine how to feed this to the package.
