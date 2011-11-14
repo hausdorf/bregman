@@ -12,6 +12,7 @@
    * Random??
      + Dirichlet would be a good choice
      + vector of independent Gammas (which is essentially unnormalized Dirichlet)
+   * [Amir] Find dataset where heuristic is awful.
 
 2. ~~Decide IO format for dataset~~
    * ~~Permutable~~
