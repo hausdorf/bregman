@@ -1,8 +1,8 @@
 *Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
 # TODO List
-* (Week of November 5) 
-  <2011-11-05 Sat>-<2011-11-11 Fri>
+* (Week of November 14) 
+  <2011-11-14 Mon>-<2011-11-21 Mon>
 
 1. Find/generate new data set:
    * High dimensional
