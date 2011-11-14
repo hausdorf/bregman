@@ -1,3 +1,5 @@
+# "DUE" on November 30th
+
 *Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
 # TODO List
