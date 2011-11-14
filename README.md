@@ -11,12 +11,12 @@
      + Dirichlet would be a good choice
      + vector of independent Gammas (which is essentially unnormalized Dirichlet)
 
-2. Decide IO format for dataset
-   * Permutable
-     - [John] What does this mean? Lists of things are permutable.
-   * Should be easy to process
-   * Data points should be in TSV or CSV (Tab- or Comma-Separated Values)
-   * One point per line
+2. ~~Decide IO format for dataset~~
+   * ~~Permutable~~
+     - [John] ~~What does this mean? Lists of things are permutable.~~
+   * ~~Should be easy to process~~
+   * ~~Data points should be in TSV or CSV (Tab- or Comma-Separated Values)~~
+   * ~~One point per line~~
 
 3. Decide trivial heuristic, code it up this week
    * (*e.g.*, start with a point, extend it)
