@@ -21,3 +21,6 @@
 3. Decide trivial heuristic, code it up this week
    * (*e.g.*, start with a point, extend it)
      - [John] Guess who forgot to do this?
+
+4. Find out how to use the package
+   * [Alex] Given a ball a right-ball in a convex measure, determine how to feed this to the package.
