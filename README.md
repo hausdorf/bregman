@@ -1,4 +1,4 @@
-# "DUE" on November 30th
+# DUE ON NOVEMBER 30TH
 
 *Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
