@@ -16,14 +16,14 @@
 
 2. ~~Decide IO format for dataset~~
    * ~~Permutable~~
-     - [John] ~~What does this mean? Lists of things are permutable.~~
+     - ~~[John] What does this mean? Lists of things are permutable.~~
    * ~~Should be easy to process~~
    * ~~Data points should be in TSV or CSV (Tab- or Comma-Separated Values)~~
    * ~~One point per line~~
 
 3. ~~Decide trivial heuristic, code it up this week~~
    * ~~(*e.g.*, start with a point, extend it)~~
-     - [John] ~~Guess who forgot to do this?~~
+     - ~~[John] Guess who forgot to do this?~~
 
 4. [John] Code up non-streaming case.
 
