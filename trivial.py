@@ -19,7 +19,7 @@ def trivial(dist, it):
 
 def main(argv):
     
-    delim = None
+    delim = ','
 
     (center, radius) = trivial(KL, ((float(xi) for xi in line.split(delim)) for line in sys.stdin))
 
