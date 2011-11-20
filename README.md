@@ -9,9 +9,10 @@
 1. Find/generate new data set:
    * High dimensional
      - [John] Note that this shouldn't be *too* high dimensional; I have a gut feeling that we'll be exponential in $d$
-   * Random??
-     + Dirichlet would be a good choice
-     + vector of independent Gammas (which is essentially unnormalized Dirichlet)
+   * ~~Random??~~
+     + ~~Dirichlet would be a good choice~~
+     + ~~vector of independent Gammas (which is essentially unnormalized Dirichlet)~~
+     + [Alex implemented this in `data.py`]
    * [Amir] Find dataset where heuristic is awful.
 
 2. ~~Decide IO format for dataset~~
