@@ -28,5 +28,5 @@
 
 4. [John] Code up non-streaming case.
 
-5. Find out how to use the package
-   * [Alex] Given a ball a right-ball in a convex measure, *e.g.*, { x | D(x, c) \le r }, determine how to feed this to the package.
+5. ~~Find out how to use the package~~
+   * ~~[Alex] Given a ball a right-ball in a convex measure, *e.g.*, { x | D(x, c) \le r }, determine how to feed this to the package.~~
