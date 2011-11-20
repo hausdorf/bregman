@@ -21,9 +21,9 @@
    * ~~Data points should be in TSV or CSV (Tab- or Comma-Separated Values)~~
    * ~~One point per line~~
 
-3. Decide trivial heuristic, code it up this week
-   * (*e.g.*, start with a point, extend it)
-     - [John] Guess who forgot to do this?
+3. ~~Decide trivial heuristic, code it up this week~~
+   * ~~(*e.g.*, start with a point, extend it)~~
+     - [John] ~~Guess who forgot to do this?~~
 
 4. [John] Code up non-streaming case.
 
