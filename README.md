@@ -3,8 +3,6 @@
 *Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
 # TODO List
-* (Week of November 14) 
-  <2011-11-14 Mon>-<2011-11-21 Mon>
 
 1. Find/generate new data set:
    * High dimensional
@@ -26,7 +24,7 @@
    * ~~(*e.g.*, start with a point, extend it)~~
      - ~~[John] Guess who forgot to do this?~~
 
-4. [John] Code up non-streaming case.
+4. ~~[John] Code up non-streaming case.~~
 
 5. ~~Find out how to use the package~~
    * ~~[Alex] Given a ball a right-ball in a convex measure, *e.g.*, { x | D(x, c) \le r }, determine how to feed this to the package.~~
