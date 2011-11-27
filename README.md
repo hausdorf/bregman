@@ -1,4 +1,4 @@
-# DUE ON NOVEMBER 30TH
+# DUE ON DECEMBER 2ND
 
 *Authors:* John Moeller, Amirali Abdullah, Alex Clemmer
 
