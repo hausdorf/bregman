@@ -30,16 +30,16 @@ def search_helper(l_far, l_c, p, c):
 	else:
 		return 0
 
-def search_lambda(func, lower, upper):
+def bsearch(func, lower, upper):
 	l_c = (lower + upper) / 2
 	c = func(l_c)
 
 	if c == 0:
 		return l_c
 	elif c < 0:
-		search_lambda(func, lower, l_c - 1)
+		return bsearch(func, lower, l_c - 1)
 	else:
-		search_lambda(func, l_c + 1, upper)
+		return bsearch(func, l_c + 1, upper)
 
 # meb_kl : point c -> radius r -> point p -> point p_far
 # each point c, p, and p_far are d-dimensional
@@ -48,7 +48,8 @@ def meb_kl(c, r, p):
 	x_lamb = x(p, c, 1)
 	l_far = brentq(f, 1, 300, args=(p, c, r))
 	print d(x(p, c, l_far), c)
-	print search_lambda(lambda x: search_helper(l_far, x, p, c), 0, l_far)
+	l_c = bsearch(lambda x: search_helper(l_far, x, p, c), 0, l_far)
+	print d(x(p, c, l_far), x(p, c, l_c)), d(p, x(p, c, l_c))
 
 
 if __name__ == '__main__':
