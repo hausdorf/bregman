@@ -31,15 +31,18 @@ def search_helper(l_far, l_c, p, c):
 		return 0
 
 def bsearch(func, lower, upper):
-	l_c = (lower + upper) / 2
-	c = func(l_c)
+	while lower <= upper:
+		l_c = (lower + upper) / 2
+		c = func(l_c)
 
-	if c == 0:
-		return l_c
-	elif c < 0:
-		return bsearch(func, lower, l_c - 1)
-	else:
-		return bsearch(func, l_c + 1, upper)
+		if c == 0:
+			return l_c
+		elif c < 0:
+			upper = l_c
+		else:
+			lower = l_c
+
+	return None
 
 # meb_kl : point c -> radius r -> point p -> point p_far
 # each point c, p, and p_far are d-dimensional
@@ -49,7 +52,8 @@ def meb_kl(c, r, p):
 	l_far = brentq(f, 1, 300, args=(p, c, r))
 	print d(x(p, c, l_far), c)
 	l_c = bsearch(lambda x: search_helper(l_far, x, p, c), 0, l_far)
-	print d(x(p, c, l_far), x(p, c, l_c)), d(p, x(p, c, l_c))
+	if l_c:
+		print d(x(p, c, l_far), x(p, c, l_c)), d(p, x(p, c, l_c))
 
 
 if __name__ == '__main__':
