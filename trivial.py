@@ -1,4 +1,4 @@
-#/usr/bin/python
+#!/usr/bin/python
 
 import sys
 import math
@@ -23,9 +23,14 @@ def main(argv):
 
     (center, radius) = trivial(KL, ((float(xi) for xi in line.split(delim)) for line in sys.stdin))
 
-    print center, radius
+    print '%.40s... %f' % (center, radius)
 
     return None
 
+# Test with:
+# tail -n +2 set1.txt | python trivial.py
+#
+# For a random permutation do:
+# tail -n +2 set1.txt | sort -R | python trivial.py
 if __name__ == '__main__':
     main(sys.argv)
