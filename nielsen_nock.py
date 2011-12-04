@@ -2,6 +2,7 @@
 
 import sys
 import random
+import argparse
 
 from kl import KL
 
@@ -21,10 +22,13 @@ def SERB(div, dataiter, T):
     return (center, max(map(lambda x: div(x, center), data)))
 
 def main(argv):
+    
+    parser = argparse.ArgumentParser(description='Run Nielsen & Nock algorithm for right balls on standard input')
+    parser.add_argument('-d', '--delimiter', nargs='?', default=',', dest='delim')
+    parser.add_argument('-T', '--iterations', nargs='?', type=int, default=100, dest='iterations')
+    args = parser.parse_args()
 
-    delim = ','
-
-    (center, radius) = SERB(KL, (tuple(float(xi) for xi in line.split(delim)) for line in sys.stdin), 100)
+    (center, radius) = SERB(KL, (tuple(float(xi) for xi in line.split(args.delim)) for line in sys.stdin), args.iterations)
     
     print '%.40s... %f' % (center, radius)
 
