@@ -2,6 +2,7 @@
 
 import sys
 import math
+import argparse
 
 from kl import KL
 
@@ -20,9 +21,11 @@ def trivial(div, it):
 
 def main(argv):
     
-    delim = ','
-
-    (center, radius) = trivial(KL, (map(float, line.split(delim)) for line in sys.stdin))
+    parser = argparse.ArgumentParser(description='Run Nielsen & Nock algorithm for right balls on standard input')
+    parser.add_argument('-d', '--delimiter', nargs='?', default=',', dest='delim')
+    args = parser.parse_args()
+                
+    (center, radius) = trivial(KL, (map(float, line.split(args.delim)) for line in sys.stdin))
 
     print '%.40s... %f' % (center, radius)
 

@@ -28,7 +28,7 @@ def main(argv):
     parser.add_argument('-T', '--iterations', nargs='?', type=int, default=100, dest='iterations')
     args = parser.parse_args()
 
-    (center, radius) = SERB(KL, (tuple(float(xi) for xi in line.split(args.delim)) for line in sys.stdin), args.iterations)
+    (center, radius) = SERB(KL, (map(float, line.split(args.delim)) for line in sys.stdin), args.iterations)
     
     print '%.40s... %f' % (center, radius)
 
