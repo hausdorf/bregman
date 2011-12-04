@@ -5,23 +5,24 @@ import math
 
 from kl import KL
 
-def trivial(dist, it):
-    curcenter = None
-    radius = 0
+def trivial(div, it):
+    center = None
+    radius = 0.0
 
-    for vec in it:
-        if not curcenter:
-            curcenter = [xi for xi in vec]
+    for v in it:
+        vec = list(v)
+        if not center:
+            center = vec
+        else:
+            radius = max(radius, div(vec, center))
 
-        radius = max(radius, dist([xi for xi in vec], curcenter))
-
-    return (curcenter, radius)
+    return (center, radius)
 
 def main(argv):
     
     delim = ','
 
-    (center, radius) = trivial(KL, ((float(xi) for xi in line.split(delim)) for line in sys.stdin))
+    (center, radius) = trivial(KL, (map(float, line.split(delim)) for line in sys.stdin))
 
     print '%.40s... %f' % (center, radius)
 
