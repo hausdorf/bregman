@@ -117,6 +117,14 @@ in $B(c,r)$ to $p$ is satisfied by $x$ s.t. $\breg(x,c) = r$, $\nabla \phi(x) = 
 the farthest point ($p_{\text{far}}$) and the nearest point $(p_{\text{near}})$ both lie along the straight line joining $c$ and $p$ in the
 gradient space.
 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=1.2]{../figures/interpolate}
+  \end{center}
+  \caption{Finding $c_{\text{new}}$}
+  \label{Trivial fails}
+\end{figure}
+
 This immediately suggests a straightforward algorithm for computing $c_{\text{new}}$ - simply do a binary search along the straight line joining $\nabla \phi(c)$ and $\nabla \phi(p)$, and find $c_{\text{new}}$ s.t $\breg(p_{\text{far}}, c_{\text{new}}) = \breg(p, c_{\text{new}})$. Although we do not have a proof that our extend ball approach is indeed the minimal radius new ball that encloses both $B(c,r)$ and $p$, our experimental results support the conjecture strongly.
  
 \section{Experimental Results}
@@ -124,10 +132,16 @@ We run our data over $3$ types of point sets. The first group of data sets is a 
 
 \begin{figure}[H]
   \begin{center}
+    \includegraphics[scale = 0.2]{../figures/trivial_fail}
+  \end{center}
+  \caption{The green ball is the optimal ball and the contours are balls produced by Algorithm \ref{trivial}}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
     \includegraphics[scale = 0.8]{../figures/trivial_poor.png}
   \end{center}
   \caption{Note the poor performance of the trivial algorithm}
-  \label{Trivial fails}
 \end{figure}
 
 For our second type of data set, we pick points regularly spread over the unit hyper cube (in the first orthant) . Due to numerical issues and overflows, we made sure the points were bounded away from the axes which is where the $kl$-divergence tends to infinity. We found that for these types of data sets , increasing $d$ has little to no impact on the quality of approximation obtained. This is not surprising, in the light of \cite{onepointfive}, in which the worst case approximation bounds do not involve $d$.
@@ -143,6 +157,13 @@ For our second type of data set, we pick points regularly spread over the unit h
 Finally, we considered our third type of data set, points spread uniformly around the boundary of a ball. This is the point set that realizes the $1.5$ lower bound for the Euclidean case (\cite{onepointfive}), and indeed realizes our worst results for Algorithm \ref{extendalgo} of $1.6$. We obtained this for points spread around the boundary of a Bregman ball, both over a small domain (where a ball is more roughly spherical) and also near the an axis ( where a ball is much more anisotropic and elliptical. In both cases, surprisingly, our Algorithm \ref{extendalgo} attained a $1.6$ bound. It remains open whether taking more anomalous balls 
 or regions will exhibit an arbitrarily bad bound for Algorithm \ref{extendalgo} on the lines of Algorithm \ref{trivial} or whether
 there is indeed a worst case performance bound.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale = 0.6]{../figures/ellipse-bad.png}
+  \end{center}
+  \caption{Data arranged around a ball. The approximate center converges to a point far from the real center}
+\end{figure}
 
 \begin{figure}[H]
   \begin{center}
