@@ -56,6 +56,41 @@
 
    (This is usually complicated but we sidestep this problem)
 
+* The Main Approach
+
+** When we get a point outside the current ball
+
+** Create a new ball that contains the old ball and the new point
+
+** This is the tough part 
+
+* Trivial Streaming Algorithm
+
+** Use first point as center, and use it forever
+
+** Only update radius when new point is outside ball
+
+* Better Streaming Algorithm
+
+** Use curve that runs through new point $p$ and old center $c$
+
+** Becomes a one-dimensional problem
+
+** Run root finder (brentq) to find the points we need
+
+* Better Streaming Algorithm (continued)
+
+** Need intersection with ball ($p_{\text{far}}$)
+
+** Need midpoint of $p_{\text{far}}$ and $p$
+
+** Midpoint becomes new $c$
+
+* Results
+
+** Gold Standard: Nielsen-Nock
+
+** Produces very close approx. to real MEB and is simple
 
 * Results
 #+ATTR_LaTeX: width=\textwidth
@@ -75,3 +110,10 @@
 * Results
 #+ATTR_LaTeX: width=\textwidth
 [[../figures/eb_worst_ellipse.png]]
+
+* Thank You
+
+#+begin_center
+#+LATEX: \huge
+Thank You!
+#+end_center
