@@ -1,4 +1,5 @@
 import random
+import math
 
 # A series of helper and utility functions relating to our dataset. Some of
 # them generate data, some of the process data, and so on.
@@ -10,8 +11,11 @@ def dirichlet(n, params):
 		# Create d random numbers, sample from Gamma for each, then
 		# normalize to 1; this is a reasonable approximation of x ~ Dir
 		smp = [random.gammavariate(a,1) for a in params]
-		yield [v/sum(smp) for v in smp]
+		yield [v/math.fsum(smp) for v in smp]
 
+def multigamma(n, params):
+    for i in range(n):
+        yield [random.gammavariate(a,1) for a in params]
 
 if __name__ == '__main__':
 	# Test the Dirichlet generator
