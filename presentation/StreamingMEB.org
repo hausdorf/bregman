@@ -1,0 +1,57 @@
+#+TITLE:     Streaming Bregman Minimum Enclosing Ball
+#+AUTHOR:    Amirali Abdullah, Alex Clemmer, John Moeller
+#+DATE:      2011-12-04 Sun
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT: 
+#+LaTeX_CLASS: beamer
+
+* Why do we care about the minimum enclosing ball (MEB)
+
+** It's nice to know about the "extent" of data
+   
+** How big/spread out is it?
+
+** Given a set of image histograms, how diverse are they?
+
+** Given a set of receivers, what power do I need to reach them all?
+
+* Wy do we care about streaming?
+
+** Small memory ($O(d)$), small time
+
+** We may have a lot of dimensions, so get the processing done fast
+
+** State of the art for $O(d)$ space:
+   - approximation factor of up to 1.5 (Euclidean)
+
+* Why do we care about Bregman divergences?
+
+  $D_F(x, y) = F(x) - F(y) - \nabla F(y)(x - y)$
+
+** Ok, great, why?
+
+** A more general way of comparing data
+   - Probability distributions (KL)
+   - Signal processing (Itakura-Saito)
+   - Geometric ($\ell_2^2$)
+
+** Bregman Divergences appear a lot in Machine Learning
+
+* Constraints
+
+** Numeric Concerns
+   Solving equations with Bregman div's can't be done explicitly
+
+** Non-convexity
+   Sometimes Bregman div's lead to optimizations that are not convex 
+
+   (This is usually complicated but we sidestep this problem)
