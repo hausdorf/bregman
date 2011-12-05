@@ -55,3 +55,23 @@
    Sometimes Bregman div's lead to optimizations that are not convex 
 
    (This is usually complicated but we sidestep this problem)
+
+
+* Results
+#+ATTR_LaTeX: width=\textwidth
+[[../figures/inc_dimensions.png]]
+
+
+* Results
+#+ATTR_LaTeX: width=\textwidth
+[[../figures/trivial_poor.png]]
+
+
+* Results
+#+ATTR_LaTeX: width=\textwidth
+[[../figures/eb_worst.png]]
+
+
+* Results
+#+ATTR_LaTeX: width=\textwidth
+[[../figures/eb_worst_ellipse.png]]
