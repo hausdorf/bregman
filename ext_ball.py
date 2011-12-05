@@ -1,14 +1,12 @@
 from math import log, exp, e
 from scipy.optimize import brentq
-import cvxmod
-from cvxmod.atoms import norm1
-from cvxmod.sets import probsimp
 from kl import KL, KLgrad, KLgradinv
+import argparse
+import sys
 
-SET1 = 'set1.txt'
-BAD1 = 'bad.txt'
-GOOD = 'good.txt'
-
+#SET1 = 'set1.txt'
+#BAD1 = 'bad.txt'
+#GOOD = 'good.txt'
 
 def lerp(p1, p2, lamb):
     return [(1-lamb) * p1_i + lamb * p2_i for p1_i, p2_i in zip(p1, p2)];
@@ -45,32 +43,61 @@ def meb_kl(c, r, p):
     
     return l_c
 
-def set1_meb_kl():
-	f = open(GOOD)
+#def set1_meb_kl():
+#	f = open(GOOD)
+#
+#	# get dimensions and num of examples
+#	dim,n = map(int, f.readline().split(','))
+#	S = [map(float, l.split(',')) for l in f.readlines()]
+#
+#	c = S[0]
+#	p = S[1]
+#	mid = grad_lerp(p, c, brentq(midpoint, 0, 1, args=(p, c)))
+#	r = KL(p, mid)
+#	c = mid
+#	for i in range(2, n):
+#		p = S[i]
+#
+#		if KL(p, c) < r:
+#			continue
+#
+#		l_c = meb_kl(c, r, p)
+#		c = grad_lerp(p, c, l_c)
+#		r = KL(p, c)
+#		print c, r
+#
+#	f.close()
 
-	# get dimensions and num of examples
-	dim,n = map(int, f.readline().split(','))
-	S = [map(float, l.split(',')) for l in f.readlines()]
+def streamMEB(it):
+    c = it.next()
+    p = it.next()
 
-	c = S[0]
-	p = S[1]
-	mid = grad_lerp(p, c, brentq(midpoint, 0, 1, args=(p, c)))
-	r = KL(p, mid)
-	c = mid
-	for i in range(2, n):
-		p = S[i]
+    c = grad_lerp(p, c, brentq(midpoint, 0, 1, args=(p, c)))
+    r = KL(p, c)
 
-		if KL(p, c) < r:
-			continue
+    for p in it:
+        if KL(p, c) < r:
+            continue
 
-		l_c = meb_kl(c, r, p)
-		c = grad_lerp(p, c, l_c)
-		r = KL(p, c)
-		print c, r
+        l_c = meb_kl(c, r, p)
+        c = grad_lerp(p, c, l_c)
+        r = KL(p, c)
+        
+    return (c, r)
 
-	f.close()
-
+def main():
+    parser = argparse.ArgumentParser(description='Run external ball algorithm for on standard input')
+    parser.add_argument('-d', '--delimiter', nargs='?', default=',', dest='delim')
+    args = parser.parse_args()
+    
+    (center, radius) = streamMEB((map(float, line.split(args.delim)) for line in sys.stdin))
+    
+    print '%.40s... %f' % (center, radius)
+    
+    return None
+    
 if __name__ == '__main__':
 	#meb_kl((e,e,e,e,e), 1, (e**2, e**1.5, e**2.5, e**2, e**3))
-	set1_meb_kl()
+	#set1_meb_kl()
+    main()
 
